@@ -167,8 +167,7 @@ function content_tag($name, $classes, $body) {
     if (is_callable($body)) {
         ob_start();
         $body();
-        $body = ob_get_contents();
-        ob_end_clean();
+        $body = ob_get_clean();
     }
 
     $result .= $body;
